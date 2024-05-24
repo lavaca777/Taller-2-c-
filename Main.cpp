@@ -140,8 +140,27 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
 
         }
             break;
+        
+        case 4:{
+            
+            string id;
+            int unidades;
+            cout << "ingrese el id del producto: " << endl;
+            cin >> id;
 
-        case 4: cout << "\nSaliendo del sistema...." << endl;
+            Producto* producto = inv->buscarProducto(id);
+            if (producto == nullptr){ cout << "no se encontro el producto" << endl; continue;}
+
+            cout << "Unidades a reponer: " << endl;
+            cin >> unidades;
+
+            producto->agregarCantidad(unidades);
+            inv->guardarProductoEnArchivo("data/Productos.txt", producto);
+
+        }
+            break;
+
+        case 5: cout << "\nSaliendo del sistema...." << endl;
             break;
         
         default: cout << "\nOpcion no valida." << endl;
