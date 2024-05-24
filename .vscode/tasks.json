@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "src/Nodo.cpp", 
+                "src/ListaEnlazada.cpp", 
+                "src/HashMap.cpp",  
+                "src/Cliente.cpp",
+                "src/GestionClientes.cpp",  
+                "src/Producto.cpp", 
+                "src/Inventario.cpp",  
+                "main.cpp",  
+                "-I",
+                "include",
+                "-o",
+                "build/proyecto",
+                "-mconsole"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila el proyecto con main.cpp y src/Funcion.cpp"
+        }
+    ]
+}
