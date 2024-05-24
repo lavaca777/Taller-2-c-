@@ -21,9 +21,9 @@ void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados) {
     cout << "\nTotal a Pagar: " << total << endl;
     cout << "Gracias por su compra! " << endl;
     for (Nodo* actual = productosComprados->obtenerCabeza(); actual != nullptr; actual = actual->siguiente) {
-        inventario->actualizarArchivo("productos.txt", actual->producto);
+        inventario->actualizarArchivo("data/Productos.txt", actual->producto);
     }
-    delete productosComprados;
+
 
 }
 
@@ -134,6 +134,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             cin >> cantidad;
             Producto* producto = new Producto(id, categoria, subcategoria, nombre, precio, cantidad);
             inv->agregarProducto(producto);
+            inv->actualizarArchivo("",producto);
             break;
 
         }
@@ -152,7 +153,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
 int main() {
     GestionClientes gestionClientes;
     Inventario inv;
-    inv.cargarProductosDesdeArchivo("C:/Users/tapia/Downloads/C++/0) taller 2/data/productos.txt");
+    inv.cargarProductosDesdeArchivo("data/Productos.txt");
     Menu(&gestionClientes, &inv);
 
 }
