@@ -135,3 +135,20 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         cerr << "Error al reemplazar el archivo." << endl;
     }
 }
+
+void Inventario::guardarProductoEnArchivo(const std::string& nombreArchivo, Producto* producto) {
+    std::ofstream archivo(nombreArchivo, std::ios::app); // Abre el archivo en modo append
+    if (!archivo.is_open()) {
+        std::cerr << "No se pudo abrir el archivo: " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << producto->getId() << ","
+            << producto->getCategoria() << ","
+            << producto->getSubCategoria() << ","
+            << producto->getNombre() << ","
+            << producto->getPrecio() << ","
+            << producto->getCantidad() << std::endl;
+
+    archivo.close();
+}

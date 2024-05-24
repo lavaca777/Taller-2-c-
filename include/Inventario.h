@@ -25,4 +25,5 @@ public:
     int contarSubcategorias(const string& categoria);
     void cargarProductosDesdeArchivo(const string& nombreArchivo);
     void actualizarArchivo(const string& nombreArchivo, Producto* productoModificado);
+    void guardarProductoEnArchivo(const std::string& nombreArchivo, Producto* producto);
 };

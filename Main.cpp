@@ -34,7 +34,8 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
         cout << "1. Ingresar cliente a la cola" << endl;
         cout << "2. Atender cliente" << endl;
         cout << "3. Agregar producto a bodega" << endl;
-        cout << "4. Salir" << endl;
+        cout << "4. Aumentar Stock" << endl;
+        cout << "5. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
@@ -134,7 +135,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             cin >> cantidad;
             Producto* producto = new Producto(id, categoria, subcategoria, nombre, precio, cantidad);
             inv->agregarProducto(producto);
-            inv->actualizarArchivo("",producto);
+            inv->guardarProductoEnArchivo("data/Productos.txt", producto);
             break;
 
         }
@@ -147,7 +148,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             break;
         }
 
-    } while (opcion != 4);
+    } while (opcion != 5);
 }
 
 int main() {
