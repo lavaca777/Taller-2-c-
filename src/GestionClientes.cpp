@@ -58,6 +58,7 @@ Cliente* GestionClientes::siguienteCliente() {
         normales.pop();
         return cliente;
     }
+    return nullptr;
 }
 
 bool GestionClientes::hayClientes() {

@@ -7,26 +7,26 @@
             "command": "g++",
             "args": [
                 "-g",
-                "src/Nodo.cpp", 
-                "src/ListaEnlazada.cpp", 
-                "src/HashMap.cpp",  
-                "src/Cliente.cpp",
-                "src/GestionClientes.cpp",  
-                "src/Producto.cpp", 
-                "src/Inventario.cpp",  
-                "main.cpp",  
+                "/workspaces/Taller_2_cpp/src/Nodo.cpp",
+                "/workspaces/Taller_2_cpp/src/ListaEnlazada.cpp",
+                "/workspaces/Taller_2_cpp/src/HashMap.cpp",
+                "/workspaces/Taller_2_cpp/src/Cliente.cpp",
+                "/workspaces/Taller_2_cpp/src/GestionClientes.cpp",
+                "/workspaces/Taller_2_cpp/src/Producto.cpp",
+                "/workspaces/Taller_2_cpp/src/Inventario.cpp",
+                "/workspaces/Taller_2_cpp/Main.cpp",
                 "-I",
-                "include",
+                "/workspaces/Taller_2_cpp/include",
                 "-o",
-                "build/proyecto",
-                "-mconsole"
+                "/workspaces/Taller_2_cpp/build/proyecto",
+                "-std=c++17"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"],
-            "detail": "Compila el proyecto con main.cpp y src/Funcion.cpp"
+            "detail": "Generated task by Debugger."
         }
     ]
 }

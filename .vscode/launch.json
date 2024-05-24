@@ -20,7 +20,7 @@
                 }
             ],
             "preLaunchTask": "build",
-            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+            "miDebuggerPath": "/usr/bin/gdb",
             "logging": {
                 "trace": true,
                 "engineLogging": true,

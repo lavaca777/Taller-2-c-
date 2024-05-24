@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Inventario.h"
 #include "GestionClientes.h"
-#include "GestionVentas.h"
 #include "Cliente.h"
 
 using namespace std;
