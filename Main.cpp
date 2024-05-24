@@ -155,7 +155,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             cin >> unidades;
 
             producto->agregarCantidad(unidades);
-            inv->guardarProductoEnArchivo("data/Productos.txt", producto);
+            inv->actualizarArchivo("data/Productos.txt", producto);
 
         }
             break;
