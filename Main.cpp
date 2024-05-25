@@ -5,7 +5,22 @@
 
 using namespace std;
 
-void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados) {
+void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProductos);
+void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados, string* archProductos);
+
+int main() {
+    GestionClientes gestionClientes;
+    Inventario inv;
+    string archProductos = "data/Productos.txt";
+    string archClientes = "data/Clientes.txt";
+
+    gestionClientes.cargarClientesDesdeArchivo(archClientes);
+    inv.cargarProductosDesdeArchivo(archProductos);
+    Menu(&gestionClientes, &inv, &archProductos);
+
+}
+
+void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados, string* archProductos) {
     cout << "\n-- Boleta de Compra --" << endl;
 
     cout << "\nDetalles de la Compra" << endl;
@@ -21,13 +36,12 @@ void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados) {
     cout << "\nTotal a Pagar: " << total << endl;
     cout << "Gracias por su compra! " << endl;
     for (Nodo* actual = productosComprados->obtenerCabeza(); actual != nullptr; actual = actual->siguiente) {
-        inventario->actualizarArchivo("data/Productos.txt", actual->producto);
+        inventario->actualizarArchivo(*archProductos, actual->producto);
     }
-
-
+    delete productosComprados;
 }
 
-void Menu(GestionClientes* gestionClientes, Inventario* inv){
+void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProductos){
     int opcion;
     do {
         cout << "\n=== Menu ===" << endl;
@@ -44,39 +58,38 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
         case 1:{
             int prioridad;
             string nombre;
-            bool esTerceraEdad = false, esEmbarazada = false, esDiscapacitado = false, esNormal = false;
+
             cout << "Nombre: " << endl;
             cin >> nombre;
+
+            Cliente* cliente = new Cliente(nombre);
             
-            cout << "Elija la opcion mas prioritaria, siendo 1 la mas prioritaria y 4 la menos" << endl;
+            cout << "Elija la opcion mas prioritaria, siendo 1 la mas prioritaria y 4 la menos prioritaria" << endl;
             cout << "1. Es tercera edad" << endl;
-            cout << "2. Es embarazada" << endl;
-            cout << "3. Es discapacitado" << endl;
+            cout << "2. Es discapacitado" << endl;
+            cout << "3. Es embarazada" << endl;
             cout << "4. Es normal" << endl;
             cout << "Seleccione una opcion: ";
             cin >> prioridad;
             
             switch (prioridad)
             {
-            case 1: esTerceraEdad = true;
+            case 1: cliente->setTerceraEdad(true);
                 break;
-            case 2: esEmbarazada = true;
+            case 2: cliente->setDiscapacitado(true);
                 break;
-            case 3: esDiscapacitado = true;
+            case 3: cliente->setEmbarazada(true);
                 break;
-            case 4: esNormal = true;
+            case 4: cliente->setNormal(true);
                 break;
             
             default: cout << "\ningreso una opcion no valida" << endl;
                 break;
             }
 
-            Cliente* cliente = new Cliente(nombre, esTerceraEdad, esEmbarazada, esDiscapacitado, esNormal);
             gestionClientes->agregarCliente(cliente);
             break;
-
         }
-            break;
 
         case 2:{
             if (!gestionClientes->hayClientes()){ cout << "\nNo hay clientes en la fila " << endl; break;}
@@ -84,6 +97,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             ListaEnlazada productosC;
             Cliente* cliente = gestionClientes->siguienteCliente();
             int cantP = 0; //cantidad de productos a comprar
+
             cout << "Se llama a " << cliente->getNombre() << endl;
             cout << "Numero de Productos a comprar: " << endl;
             cin >> cantP; //cantidad de productos
@@ -103,26 +117,24 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
                 if (producto == nullptr) {cout << "Producto no encontrado" << endl; continue;}
                 if (producto->getCantidad() < cant) {cout << "No hay stock suficiente para la cantidad pedida" << endl; continue;}
 
-                for (int j = 0; i < cant; i++){
+                for (int j = 0; j < cant; j++){
                     productosC.insertar(producto);
                 }
 
                 producto->restarCantidad(cant);
-                
-                
+                     
             }
-            generarBoleta(inv, &productosC);
-
-        }
+            generarBoleta(inv, &productosC, archProductos);
+            delete cliente;
             break;
-
+        }
+            
         case 3:{
 
-            string id, categoria, subcategoria, nombre;
+            string categoria, subcategoria, nombre;
             double precio;
             int cantidad;
-            cout << "ID: ";
-            cin >> id;
+
             cout << "Categoria: ";
             cin >> categoria;
             cout << "Subcategoria: ";
@@ -133,14 +145,14 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             cin >> precio;
             cout << "Cantidad: ";
             cin >> cantidad;
-            Producto* producto = new Producto(id, categoria, subcategoria, nombre, precio, cantidad);
+            
+            Producto* producto = new Producto("", categoria, subcategoria, nombre, precio, cantidad);
             inv->agregarProducto(producto);
-            inv->guardarProductoEnArchivo("data/Productos.txt", producto);
+            inv->guardarProductoEnArchivo(*archProductos, producto);
             break;
 
         }
-            break;
-        
+
         case 4:{
             
             string id;
@@ -155,25 +167,20 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv){
             cin >> unidades;
 
             producto->agregarCantidad(unidades);
-            inv->actualizarArchivo("data/Productos.txt", producto);
-
+            inv->actualizarArchivo(*archProductos, producto);
+            break;
         }
+            
+        case 5: {
+            gestionClientes->guardarClientesEnArchivo("data/Clientes.txt");
+            cout << "\nSaliendo del sistema...." << endl;
             break;
+        }
 
-        case 5: cout << "\nSaliendo del sistema...." << endl;
-            break;
-        
-        default: cout << "\nOpcion no valida." << endl;
+        default: 
+            cout << "\nOpcion no valida." << endl;
             break;
         }
 
     } while (opcion != 5);
-}
-
-int main() {
-    GestionClientes gestionClientes;
-    Inventario inv;
-    inv.cargarProductosDesdeArchivo("data/Productos.txt");
-    Menu(&gestionClientes, &inv);
-
 }

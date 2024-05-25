@@ -1,0 +1,7 @@
+pedropo,TerceraEdad
+juan,Discapacitado
+Cristian,Discapacitado
+pedro,Discapacitado
+javiera,Embarazada
+tiare,Embarazada
+inti,Normal

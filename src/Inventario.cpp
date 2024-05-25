@@ -10,7 +10,7 @@ CategoriaNodo::~CategoriaNodo() {
     delete subcategorias;
 }
 
-Inventario::Inventario() : cabeza(nullptr) {}
+Inventario::Inventario() : cabeza(nullptr) {}   
 
 Inventario::~Inventario() {
     CategoriaNodo* actual = cabeza;
@@ -21,8 +21,28 @@ Inventario::~Inventario() {
     }
 }
 
+std::string Inventario::obtenerProximoId() {
+    int maxId = 0;
+    CategoriaNodo* actual = cabeza;
+    while (actual != nullptr) {
+        ListaEnlazada* productos = actual->subcategorias->obtenerTodosLosProductos();
+        Nodo* nodo = productos->obtenerCabeza();
+        while (nodo != nullptr) {
+            int id = std::stoi(nodo->producto->getId());
+            maxId = std::max(maxId, id);
+            nodo = nodo->siguiente;
+        }
+        delete productos; // Liberar la memoria después de usarla
+        actual = actual->siguiente;
+    }
+    return std::to_string(maxId + 1);
+}
+
 void Inventario::agregarProducto(Producto* producto) {
-    string categoria = producto->getCategoria();
+    if (producto->getId().empty()) {
+        producto->setId(obtenerProximoId());
+    }
+    std::string categoria = producto->getCategoria();
     CategoriaNodo* actual = cabeza;
     CategoriaNodo* previo = nullptr;
 
@@ -66,7 +86,7 @@ void Inventario::mostrarInventario() {
 void Inventario::cargarProductosDesdeArchivo(const string& nombreArchivo) {
     ifstream archivo(nombreArchivo);
     if (!archivo.is_open()) {
-        cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
+        cerr << "No se pudo abrir el archivo : " << nombreArchivo << endl;
         return;
     }
 
@@ -100,7 +120,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         return;
     }
 
-    ofstream archivoSalida("data/temp.txt"); // Archivo temporal para escribir los datos actualizados
+    ofstream archivoSalida("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt"); // Archivo temporal para escribir los datos actualizados
     if (!archivoSalida.is_open()) {
         cerr << "No se pudo abrir el archivo temporal." << endl;
         archivoEntrada.close();
@@ -131,15 +151,15 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
     archivoSalida.close();
 
     // Reemplazar el archivo original con el archivo temporal
-    if (rename("data/temp.txt", nombreArchivo.c_str()) != 0) {
+    if (rename("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt", nombreArchivo.c_str()) != 0) {
         cerr << "Error al reemplazar el archivo." << endl;
     }
 }
 
-void Inventario::guardarProductoEnArchivo(const std::string& nombreArchivo, Producto* producto) {
-    std::ofstream archivo(nombreArchivo, std::ios::app); // Abre el archivo en modo append
+void Inventario::guardarProductoEnArchivo(const string& nombreArchivo, Producto* producto) {
+    ofstream archivo(nombreArchivo, ios::app); // Abre el archivo en modo append
     if (!archivo.is_open()) {
-        std::cerr << "No se pudo abrir el archivo: " << nombreArchivo << std::endl;
+        cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
         return;
     }
 
@@ -148,7 +168,7 @@ void Inventario::guardarProductoEnArchivo(const std::string& nombreArchivo, Prod
             << producto->getSubCategoria() << ","
             << producto->getNombre() << ","
             << producto->getPrecio() << ","
-            << producto->getCantidad() << std::endl;
+            << producto->getCantidad() << endl;
 
     archivo.close();
 }

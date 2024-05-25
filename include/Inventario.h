@@ -15,6 +15,7 @@ public:
 class Inventario {
 private:
     CategoriaNodo* cabeza;
+    std::string obtenerProximoId();
 
 public:
     Inventario();
@@ -25,5 +26,5 @@ public:
     int contarSubcategorias(const string& categoria);
     void cargarProductosDesdeArchivo(const string& nombreArchivo);
     void actualizarArchivo(const string& nombreArchivo, Producto* productoModificado);
-    void guardarProductoEnArchivo(const std::string& nombreArchivo, Producto* producto);
+    void guardarProductoEnArchivo(const string& nombreArchivo, Producto* producto);
 };

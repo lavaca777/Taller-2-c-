@@ -8,6 +8,15 @@ void ListaEnlazada::insertar(Producto* producto) {
     cabeza = nuevoNodo;
 }
 
+ListaEnlazada::~ListaEnlazada() {
+    Nodo* actual = cabeza;
+    while (actual != nullptr) {
+        Nodo* siguiente = actual->siguiente;
+        delete actual; // Eliminar el nodo actual
+        actual = siguiente;
+    }
+}
+
 Producto* ListaEnlazada::buscar(const string& id) {
     Nodo* actual = cabeza;
     while (actual != nullptr) {

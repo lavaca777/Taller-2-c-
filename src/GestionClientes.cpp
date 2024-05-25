@@ -1,4 +1,7 @@
 #include "GestionClientes.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 GestionClientes::~GestionClientes() {
 
@@ -58,9 +61,63 @@ Cliente* GestionClientes::siguienteCliente() {
         normales.pop();
         return cliente;
     }
-    return nullptr;
 }
 
 bool GestionClientes::hayClientes() {
     return !terceraEdad.empty() || !discapacitados.empty() || !embarazadas.empty() || !normales.empty();
+}
+
+void GestionClientes::guardarClientesEnArchivo(const string& nombreArchivo) {
+    ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
+        return;
+    }
+
+    auto guardarCola = [&archivo](queue<Cliente*>& cola, const string& tipo) {
+        queue<Cliente*> temp = cola;
+
+        while (!temp.empty()) {
+            Cliente* cliente = temp.front();
+            archivo << cliente->getNombre() << "," << tipo << endl;
+            temp.pop();
+        }
+    };
+
+    guardarCola(terceraEdad, "TerceraEdad");
+    guardarCola(discapacitados, "Discapacitado");
+    guardarCola(embarazadas, "Embarazada");
+    guardarCola(normales, "Normal");
+
+    archivo.close();
+}
+
+void GestionClientes::cargarClientesDesdeArchivo(const string& nombreArchivo) {
+    ifstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
+        return;
+    }
+
+    string linea;
+    while (getline(archivo, linea)) {
+        istringstream ss(linea);
+        string nombre, tipo;
+        getline(ss, nombre, ',');
+        getline(ss, tipo, ',');
+
+        Cliente* cliente = new Cliente(nombre);
+        if (tipo == "TerceraEdad") {
+            cliente->setTerceraEdad(true);
+            agregarCliente(cliente);
+        } else if (tipo == "Discapacitado") {
+            cliente->setDiscapacitado(true);
+            agregarCliente(cliente);
+        } else if (tipo == "Embarazada") {
+            cliente->setEmbarazada(true);
+            agregarCliente(cliente);
+        }
+        else{ cliente->setNormal(true); agregarCliente(cliente);}  
+    }
+    archivo.close();
 }

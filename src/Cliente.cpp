@@ -1,17 +1,18 @@
 #include "Cliente.h"
 using namespace std;
 
-Cliente::Cliente (string nombre, bool esTerceraEdad, bool esEmbarazada, bool esDiscapacitado, bool esNormal){
+Cliente::Cliente (string nombre){
     this -> nombre = nombre;
-    this -> esTerceraEdad = esTerceraEdad;
-    this -> esEmbarazada = esEmbarazada;
-    this -> esDiscapacitado = esDiscapacitado;
-    this -> esNormal = esNormal;
 }
 Cliente::~Cliente() {}
 
 string Cliente::getNombre() const { return nombre; }
-bool Cliente::getEsTerceraEdad() const { return esTerceraEdad; }
-bool Cliente::getEsEmbarazada() const { return esEmbarazada; }
-bool Cliente::getEsDiscapacitado() const { return esDiscapacitado; }
-bool Cliente::getEsNormal() const { return esNormal; }
+bool Cliente::getEsTerceraEdad() const { return terceraEdad; }
+bool Cliente::getEsEmbarazada() const { return embarazada; }
+bool Cliente::getEsDiscapacitado() const { return discapacitado; }
+bool Cliente::getEsNormal() const { return normal; }
+
+void Cliente::setTerceraEdad(bool terceraEdad) { this->terceraEdad = terceraEdad; }
+void Cliente::setDiscapacitado(bool discapacitado) { this->discapacitado = discapacitado;}
+void Cliente::setEmbarazada(bool embarazada) { this->embarazada = embarazada;}
+void Cliente::setNormal(bool normal) { this->normal = normal;}

@@ -15,6 +15,6 @@ public:
     Producto* search(const string& key);
     void remove(const string& key);
     void display() const;
-    Nodo* obtenerTodosLosProductos() const;
+    ListaEnlazada* obtenerTodosLosProductos();
 
 };

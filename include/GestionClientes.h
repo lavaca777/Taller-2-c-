@@ -16,4 +16,7 @@ public:
     void agregarCliente(Cliente* cliente);
     Cliente* siguienteCliente();
     bool hayClientes();
+
+    void guardarClientesEnArchivo(const string& nombreArchivo);
+    void cargarClientesDesdeArchivo(const string& nombreArchivo);
 };

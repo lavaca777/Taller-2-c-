@@ -31,12 +31,14 @@ void HashMap::display() const {
     }
 }
 
-Nodo* HashMap::obtenerTodosLosProductos() const {
+ListaEnlazada* HashMap::obtenerTodosLosProductos() {
+    ListaEnlazada* todos = new ListaEnlazada();
     for (int i = 0; i < TABLE_SIZE; ++i) {
         Nodo* nodo = table[i].obtenerCabeza();
-        if (nodo != nullptr) {
-            return nodo;
+        while (nodo != nullptr) {
+            todos->insertar(nodo->producto);
+            nodo = nodo->siguiente;
         }
     }
-    return nullptr;
+    return todos;
 }

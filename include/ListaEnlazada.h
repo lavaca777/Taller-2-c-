@@ -8,6 +8,7 @@ private:
 
 public:
     ListaEnlazada();
+    ~ListaEnlazada();
     void insertar(Producto* producto);
     Producto* buscar(const string& id);
     void eliminar(const string& id);

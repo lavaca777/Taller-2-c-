@@ -14,6 +14,7 @@ Producto::Producto (string id, string categoria, string subCategoria, string nom
 
 //geters
 string Producto::getId()const{return id;}
+void Producto::setId(const std::string& id) {this->id = id; }
 string Producto::getCategoria()const{return categoria;}
 string Producto::getSubCategoria()const{return subCategoria;}
 string Producto::getNombre()const{return nombre;}
