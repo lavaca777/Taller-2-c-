@@ -5,3 +5,4 @@ pedro,Discapacitado
 javiera,Embarazada
 tiare,Embarazada
 inti,Normal
+Mauricio,Normal

@@ -38,7 +38,7 @@ void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados, s
     for (Nodo* actual = productosComprados->obtenerCabeza(); actual != nullptr; actual = actual->siguiente) {
         inventario->actualizarArchivo(*archProductos, actual->producto);
     }
-    delete productosComprados;
+    //delete productosComprados;
 }
 
 void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProductos){

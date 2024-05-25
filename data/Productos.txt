@@ -1,5 +1,5 @@
 1,Medicina,Analgésicos,Paracetamol,5.0,50
-2,Medicina,Analgésicos,Ibuprofeno,7.5,20
+2,Medicina,Analgésicos,Ibuprofeno,7.5,15
 3,Medicina,Analgésicos,Aspirina,4.0,40
 4,Medicina,Medicamentos de prescripción,Omeprazol,10.0,20
 5,Medicina,Medicamentos de prescripción,Atorvastatina,15.0,25
@@ -14,4 +14,5 @@
 14,Alimentos,Vegetales,Fresa,3.0,50
 15,Alimentos,Vegetales,Zanahoria,2.0,60
 16,Alimentos,Frutas,Manzana,4.0,40
-17,Alimentos,Frutas,Banana,2.5,55
+17,Alimentos,Frutas,Banana,2.5,45
+18,Alimentos,Frutas,Pera,4.4,30
