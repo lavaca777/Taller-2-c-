@@ -16,6 +16,7 @@ Este proyecto implementa un sistema de gestión de inventario y clientes para un
 
 - `main.cpp`: Contiene la función principal del programa y el menú interactivo para gestionar el sistema.
 - `Inventario.h` y `Inventario.cpp`: Declaración e implementación de la clase `Inventario`, que gestiona los productos.
+- `Producto.h` y `Producto.cpp`: Declaración e implementación de la clase `Producto`, que representa un producto en el inventario.
 - `ListaEnlazada.h` y `ListaEnlazada.cpp`: Declaración e implementación de la clase `ListaEnlazada` para gestionar listas enlazadas de productos.
 - `HashMap.h` y `HashMap.cpp`: Declaración e implementación de la clase `HashMap` para la gestión de productos mediante tablas hash.
 - `GestionClientes.h` y `GestionClientes.cpp`: Declaración e implementación de la clase `GestionClientes` para gestionar la cola de clientes.
@@ -49,7 +50,7 @@ Este proyecto implementa un sistema de gestión de inventario y clientes para un
 
 1. **Compilar el código**:
     ```sh
-    g++ -o farmacia main.cpp Inventario.cpp ListaEnlazada.cpp HashMap.cpp GestionClientes.cpp Cliente.cpp
+    g++ -o farmacia main.cpp Inventario.cpp Producto.cpp ListaEnlazada.cpp HashMap.cpp GestionClientes.cpp Cliente.cpp
     ```
 
 2. **Ejecutar el programa**:
@@ -70,6 +71,16 @@ Este proyecto implementa un sistema de gestión de inventario y clientes para un
     - Al seleccionar la opción `2`, se llama al siguiente cliente en la cola.
     - Se muestra el inventario y se permite al cliente seleccionar productos.
     - Se genera una boleta de compra y se actualiza el archivo de inventario.
+
+## Equipo de Trabajo
+
+- **Inti Bautista Santibáñez Walker**
+  - **RUT**: 21.275.258-4
+  - **Correo**: inti.santibanez@alumnos.ucn.cl
+
+- **Carlos Andres Tapia Paredes**
+  - **RUT**: 21.458.544-8
+  - **Correo**: carlos.tapia03@alumnos.ucn.cl
 
 ## Contribución
 
