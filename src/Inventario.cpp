@@ -21,28 +21,28 @@ Inventario::~Inventario() {
     }
 }
 
-string Inventario::obtenerProximoId() {
+std::string Inventario::obtenerProximoId() {
     int maxId = 0;
     CategoriaNodo* actual = cabeza;
     while (actual != nullptr) {
         ListaEnlazada* productos = actual->subcategorias->obtenerTodosLosProductos();
         Nodo* nodo = productos->obtenerCabeza();
         while (nodo != nullptr) {
-            int id = stoi(nodo->producto->getId());
-            maxId = max(maxId, id);
+            int id = std::stoi(nodo->producto->getId());
+            maxId = std::max(maxId, id);
             nodo = nodo->siguiente;
         }
         delete productos; // Liberar la memoria después de usarla
         actual = actual->siguiente;
     }
-    return to_string(maxId + 1);
+    return std::to_string(maxId + 1);
 }
 
 void Inventario::agregarProducto(Producto* producto) {
     if (producto->getId().empty()) {
         producto->setId(obtenerProximoId());
     }
-    string categoria = producto->getCategoria();
+    std::string categoria = producto->getCategoria();
     CategoriaNodo* actual = cabeza;
     CategoriaNodo* previo = nullptr;
 
@@ -120,7 +120,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         return;
     }
 
-    ofstream archivoSalida("data/temp.txt"); // Archivo temporal para escribir los datos actualizados
+    ofstream archivoSalida("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt"); // Archivo temporal para escribir los datos actualizados
     if (!archivoSalida.is_open()) {
         cerr << "No se pudo abrir el archivo temporal." << endl;
         archivoEntrada.close();
@@ -151,7 +151,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
     archivoSalida.close();
 
     // Reemplazar el archivo original con el archivo temporal
-    if (rename("data/temp.txt", nombreArchivo.c_str()) != 0) {
+    if (rename("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt", nombreArchivo.c_str()) != 0) {
         cerr << "Error al reemplazar el archivo." << endl;
     }
 }
