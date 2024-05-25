@@ -120,7 +120,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         return;
     }
 
-    ofstream archivoSalida("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt"); // Archivo temporal para escribir los datos actualizados
+    ofstream archivoSalida("data/temp.txt"); // Archivo temporal para escribir los datos actualizados
     if (!archivoSalida.is_open()) {
         cerr << "No se pudo abrir el archivo temporal." << endl;
         archivoEntrada.close();
@@ -151,7 +151,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
     archivoSalida.close();
 
     // Reemplazar el archivo original con el archivo temporal
-    if (rename("C:/Users/tapia/Downloads/C++/Taller_2_cpp/data/temp.txt", nombreArchivo.c_str()) != 0) {
+    if (rename("data/temp.txt", nombreArchivo.c_str()) != 0) {
         cerr << "Error al reemplazar el archivo." << endl;
     }
 }
