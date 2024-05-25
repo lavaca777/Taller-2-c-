@@ -15,7 +15,7 @@ public:
 class Inventario {
 private:
     CategoriaNodo* cabeza;
-    std::string obtenerProximoId();
+    g obtenerProximoId();
 
 public:
     Inventario();

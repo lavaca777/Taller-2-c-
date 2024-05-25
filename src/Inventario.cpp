@@ -21,28 +21,28 @@ Inventario::~Inventario() {
     }
 }
 
-std::string Inventario::obtenerProximoId() {
+string Inventario::obtenerProximoId() {
     int maxId = 0;
     CategoriaNodo* actual = cabeza;
     while (actual != nullptr) {
         ListaEnlazada* productos = actual->subcategorias->obtenerTodosLosProductos();
         Nodo* nodo = productos->obtenerCabeza();
         while (nodo != nullptr) {
-            int id = std::stoi(nodo->producto->getId());
-            maxId = std::max(maxId, id);
+            int id = stoi(nodo->producto->getId());
+            maxId = max(maxId, id);
             nodo = nodo->siguiente;
         }
         delete productos; // Liberar la memoria después de usarla
         actual = actual->siguiente;
     }
-    return std::to_string(maxId + 1);
+    return to_string(maxId + 1);
 }
 
 void Inventario::agregarProducto(Producto* producto) {
     if (producto->getId().empty()) {
         producto->setId(obtenerProximoId());
     }
-    std::string categoria = producto->getCategoria();
+    string categoria = producto->getCategoria();
     CategoriaNodo* actual = cabeza;
     CategoriaNodo* previo = nullptr;
 
