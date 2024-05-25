@@ -66,15 +66,25 @@ La clase `GestionClientes` maneja la cola de clientes, permitiendo agregar clien
 
 ## Compilación y Ejecución
 
+### Método 1: Compilación desde la Línea de Comandos
+
 1. **Compilar el código**:
     ```sh
-    g++ -o farmacia main.cpp Inventario.cpp Producto.cpp ListaEnlazada.cpp HashMap.cpp GestionClientes.cpp Cliente.cpp
+    g++ src/Inventario.cpp src/Producto.cpp src/ListaEnlazada.cpp src/HashMap.cpp src/GestionClientes.cpp src/Cliente.cpp src/Nodo.cpp main.cpp -I include -o farmacia
     ```
 
 2. **Ejecutar el programa**:
     ```sh
-    ./farmacia
+    ./farmacia.exe
     ```
+
+### Método 2: Ejecución desde el Entorno de Desarrollo
+
+1. **Abrir el Proyecto**:
+    Abre el proyecto en tu entorno de desarrollo (por ejemplo, Visual Studio Code).
+
+2. **Compilar y Ejecutar**:
+    Utiliza la función de compilación y ejecución integrada en tu entorno de desarrollo. Por ejemplo, en Visual Studio Code, presiona F5 para compilar y ejecutar el programa.
 
 ## Uso
 
