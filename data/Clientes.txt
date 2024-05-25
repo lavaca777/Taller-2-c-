@@ -1,4 +1,4 @@
-pedropo,TerceraEdad
+Hector,TerceraEdad
 juan,Discapacitado
 Cristian,Discapacitado
 pedro,Discapacitado
