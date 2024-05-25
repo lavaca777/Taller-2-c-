@@ -81,10 +81,13 @@ La clase `GestionClientes` maneja la cola de clientes, permitiendo agregar clien
 ### Método 2: Ejecución desde el Entorno de Desarrollo
 
 1. **Abrir el Proyecto**:
-    Abre el proyecto en tu entorno de desarrollo (por ejemplo, Visual Studio Code).
+    Abre el proyecto en tu entorno de desarrollo (por ejemplo, Codespaces).
 
 2. **Compilar y Ejecutar**:
-    Utiliza la función de compilación y ejecución integrada en tu entorno de desarrollo. Por ejemplo, en Visual Studio Code, presiona F5 para compilar y ejecutar el programa.
+    Utiliza la función de compilación y ejecución integrada en tu entorno de desarrollo. Por ejemplo, en Codespaces, presiona F5 para compilar y ejecutar el programa.
+
+3. **Si no compila con f5**:
+    Abrir el archivo generado en la carpeta build
 
 ## Uso
 
