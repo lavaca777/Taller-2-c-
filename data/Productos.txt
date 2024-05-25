@@ -3,16 +3,34 @@
 3,Medicina,Analgésicos,Aspirina,4.0,40
 4,Medicina,Medicamentos de prescripción,Omeprazol,10.0,20
 5,Medicina,Medicamentos de prescripción,Atorvastatina,15.0,25
-6,Belleza,Cuidado de la piel,Crema hidratante,12.0,15
-7,Belleza,Cuidado de la piel,Serum facial,20.0,10
-8,Belleza,Cuidado del cabello,Champú,8.0,20
-9,Belleza,Cuidado del cabello,Acondicionador,8.0,18
-10,Higiene,Productos de baño,Jabón líquido,5.0,30
-11,Higiene,Productos de baño,Shampoo corporal,7.0,25
-12,Higiene,Productos de cuidado bucal,Pasta de dientes,4.0,40
-13,Higiene,Productos de cuidado bucal,Cepillo de dientes,2.0,50
-14,Alimentos,Vegetales,Fresa,3.0,50
-15,Alimentos,Vegetales,Zanahoria,2.0,60
-16,Alimentos,Frutas,Manzana,4.0,40
-17,Alimentos,Frutas,Banana,2.5,45
-18,Alimentos,Frutas,Pera,4.4,30
+6,Medicina,Medicamentos de prescripción,Losartán,12.0,30
+7,Belleza,Cuidado de la piel,Crema hidratante,12.0,15
+8,Belleza,Cuidado de la piel,Serum facial,20.0,10
+9,Belleza,Cuidado de la piel,Bálsamo labial,6.0,25
+10,Belleza,Cuidado del cabello,Champú,8.0,20
+11,Belleza,Cuidado del cabello,Acondicionador,8.0,18
+12,Belleza,Cuidado del cabello,Mascarilla capilar,15.0,12
+13,Higiene,Productos de baño,Jabón líquido,5.0,30
+14,Higiene,Productos de baño,Shampoo corporal,7.0,25
+15,Higiene,Productos de baño,Sales de baño,10.0,20
+16,Higiene,Productos de cuidado bucal,Pasta de dientes,4.0,40
+17,Higiene,Productos de cuidado bucal,Cepillo de dientes,2.0,50
+18,Higiene,Productos de cuidado bucal,Enjuague bucal,5.5,35
+19,Alimentos,Vegetales,Fresa,3.0,50
+20,Alimentos,Vegetales,Zanahoria,2.0,60
+21,Alimentos,Vegetales,Tomate,3.5,45
+22,Alimentos,Frutas,Manzana,4.0,40
+23,Alimentos,Frutas,Banana,2.5,45
+24,Alimentos,Frutas,Pera,4.4,30
+25,Suplementos,Vitamínicos,Vitamina C,10.0,50
+26,Suplementos,Vitamínicos,Vitamina D,12.0,40
+27,Suplementos,Vitamínicos,Multivitamínico,15.0,35
+28,Suplementos,Proteínas,Proteína Whey,25.0,20
+29,Suplementos,Proteínas,Proteína de soya,22.0,25
+30,Suplementos,Proteínas,Proteína de caseína,30.0,15
+31,Cuidado Personal,Higiene femenina,Toallas higiénicas,5.0,60
+32,Cuidado Personal,Higiene femenina,Tampones,6.0,50
+33,Cuidado Personal,Higiene femenina,Copa menstrual,15.0,20
+34,Cuidado Personal,Higiene masculina,Afeitadoras,8.0,40
+35,Cuidado Personal,Higiene masculina,Espuma de afeitar,7.0,35
+36,Cuidado Personal,Higiene masculina,Loción post-afeitado,10.0,25
