@@ -30,19 +30,19 @@ Este proyecto implementa un sistema de gestión de inventario y clientes para un
 
 #### `clientes.txt`
 
-pedropo,TerceraEdad\n
-juan,Discapacitado\n
-tiare,Embarazada\n
-inti,Normal\n
+- pedropo,TerceraEdad
+- juan,Discapacitado
+- tiare,Embarazada
+- inti,Normal
 
 #### `productos.txt`
 
-1,Medicina,Analgésicos,Paracetamol,5.0,50\n
-2,Medicina,Analgésicos,Ibuprofeno,7.5,15\n
-3,Medicina,Analgésicos,Aspirina,4.0,40\n
-4,Medicina,Medicamentos de prescripción,Omeprazol,10.0,20\n
-5,Medicina,Medicamentos de prescripción,Atorvastatina,15.0,25\n
-6,Medicina,Medicamentos de prescripción,Losartán,12.0,30\n
+- 1,Medicina,Analgésicos,Paracetamol,5.0,50
+- 2,Medicina,Analgésicos,Ibuprofeno,7.5,15
+- 3,Medicina,Analgésicos,Aspirina,4.0,40
+- 4,Medicina,Medicamentos de prescripción,Omeprazol,10.0,20
+- 5,Medicina,Medicamentos de prescripción,Atorvastatina,15.0,25
+- 6,Medicina,Medicamentos de prescripción,Losartán,12.0,30
 
 
 ## Compilación y Ejecución
