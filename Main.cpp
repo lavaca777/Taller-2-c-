@@ -157,6 +157,9 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProduct
             
             string id;
             int unidades;
+
+            inv->mostrarInventario();
+
             cout << "ingrese el id del producto: " << endl;
             cin >> id;
 

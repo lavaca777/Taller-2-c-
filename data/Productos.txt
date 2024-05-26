@@ -1,4 +1,4 @@
-1,Medicina,Analgésicos,Paracetamol,5.0,50
+1,Medicina,Analgésicos,Paracetamol,5.0,51
 2,Medicina,Analgésicos,Ibuprofeno,7.5,15
 3,Medicina,Analgésicos,Aspirina,4.0,40
 4,Medicina,Medicamentos de prescripción,Omeprazol,10.0,20
