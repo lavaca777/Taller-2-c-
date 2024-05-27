@@ -33,4 +33,4 @@
 33,Cuidado Personal,Higiene femenina,Copa menstrual,15.0,20
 34,Cuidado Personal,Higiene masculina,Afeitadoras,8.0,40
 35,Cuidado Personal,Higiene masculina,Espuma de afeitar,7.0,35
-36,Cuidado Personal,Higiene masculina,Loción post-afeitado,10.0,20
+36,Cuidado Personal,Higiene masculina,Loción post-afeitado,10.0,25

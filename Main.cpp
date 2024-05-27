@@ -52,6 +52,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProduct
         cout << "5. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
+        cout << endl;
 
         switch (opcion)
         {
@@ -60,7 +61,7 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProduct
             string nombre;
             string rut;
 
-            cout << "\nNombre: ";
+            cout << "Nombre: ";
             cin.ignore();
             getline(cin, nombre);
             cout << "RUT: ";
