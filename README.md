@@ -32,7 +32,7 @@ La clase `Producto` representa un producto en el inventario. Cada objeto `Produc
 
 ### 3. Cliente (`Cliente`)
 
-La clase `Cliente` representa a un cliente en la cola de atención. Cada objeto `Cliente` tiene atributos como nombre y una prioridad basada en su condición (tercera edad, discapacitado, embarazada, normal).
+La clase `Cliente` representa a un cliente en la cola de atención. Cada objeto `Cliente` tiene atributos como nombre, rut y una prioridad basada en su condición (tercera edad, discapacitado, embarazada, normal).
 
 ### 4. Gestión de Clientes (`GestionClientes`)
 
@@ -50,10 +50,10 @@ La clase `GestionClientes` maneja la cola de clientes, permitiendo agregar clien
 
 #### `clientes.txt`
 
-- pedropo,TerceraEdad
-- juan,Discapacitado
-- tiare,Embarazada
-- inti,Normal
+- Juan Perez,12345678-9,TerceraEdad
+- Luis Fernandez,22334455-6,TerceraEdad
+- Jose Tapia,21.458.544-8,TerceraEdad
+- Maria Lopez,98765432-1,Discapacitado
 
 #### `productos.txt`
 
