@@ -38,7 +38,7 @@ void generarBoleta( Inventario* inventario, ListaEnlazada* productosComprados, s
     for (Nodo* actual = productosComprados->obtenerCabeza(); actual != nullptr; actual = actual->siguiente) {
         inventario->actualizarArchivo(*archProductos, actual->producto);
     }
-    //delete productosComprados;
+    
 }
 
 void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProductos){
@@ -58,13 +58,17 @@ void Menu(GestionClientes* gestionClientes, Inventario* inv, string* archProduct
         case 1:{
             int prioridad;
             string nombre;
+            string rut;
 
-            cout << "Nombre: " << endl;
-            cin >> nombre;
+            cout << "\nNombre: ";
+            cin.ignore();
+            getline(cin, nombre);
+            cout << "RUT: ";
+            cin >> rut;
 
-            Cliente* cliente = new Cliente(nombre);
+            Cliente* cliente = new Cliente(nombre, rut);
             
-            cout << "Elija la opcion mas prioritaria, siendo 1 la mas prioritaria y 4 la menos prioritaria" << endl;
+            cout << "\nElija la opcion mas prioritaria, siendo 1 la mas prioritaria y 4 la menos prioritaria" << endl;
             cout << "1. Es tercera edad" << endl;
             cout << "2. Es discapacitado" << endl;
             cout << "3. Es embarazada" << endl;

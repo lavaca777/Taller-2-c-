@@ -80,7 +80,7 @@ void GestionClientes::guardarClientesEnArchivo(const string& nombreArchivo) {
 
         while (!temp.empty()) {
             Cliente* cliente = temp.front();
-            archivo << cliente->getNombre() << "," << tipo << endl;
+            archivo << cliente->getNombre() << "," << cliente->getRut() << "," << tipo << endl;
             temp.pop();
         }
     };
@@ -103,11 +103,12 @@ void GestionClientes::cargarClientesDesdeArchivo(const string& nombreArchivo) {
     string linea;
     while (getline(archivo, linea)) {
         istringstream ss(linea);
-        string nombre, tipo;
+        string nombre, rut, tipo;
         getline(ss, nombre, ',');
+        getline(ss, rut, ',');
         getline(ss, tipo, ',');
 
-        Cliente* cliente = new Cliente(nombre);
+        Cliente* cliente = new Cliente(nombre, rut);
         if (tipo == "TerceraEdad") {
             cliente->setTerceraEdad(true);
             agregarCliente(cliente);
@@ -117,8 +118,10 @@ void GestionClientes::cargarClientesDesdeArchivo(const string& nombreArchivo) {
         } else if (tipo == "Embarazada") {
             cliente->setEmbarazada(true);
             agregarCliente(cliente);
+        } else {
+            cliente->setNormal(true);
+            agregarCliente(cliente);
         }
-        else{ cliente->setNormal(true); agregarCliente(cliente);}  
     }
     archivo.close();
 }

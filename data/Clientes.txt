@@ -1,8 +1,7 @@
-fernanfloo,TerceraEdad
-juan,Discapacitado
-Cristian,Discapacitado
-pedro,Discapacitado
-javiera,Embarazada
-tiare,Embarazada
-inti,Normal
-Mauricio,Normal
+Juan Perez,12345678-9,TerceraEdad
+Luis Fernandez,22334455-6,TerceraEdad
+Jose Tapia,21.458.544-8,TerceraEdad
+Maria Lopez,98765432-1,Discapacitado
+Ana Gomez,11223344-5,Embarazada
+Carlos Martinez,55667788-0,Normal
+Sofia Ramirez,99887766-5,Normal

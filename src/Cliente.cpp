@@ -1,12 +1,14 @@
 #include "Cliente.h"
 using namespace std;
 
-Cliente::Cliente (string nombre){
+Cliente::Cliente (string nombre, string rut){
     this -> nombre = nombre;
+    this -> rut = rut;
 }
 Cliente::~Cliente() {}
 
 string Cliente::getNombre() const { return nombre; }
+string Cliente::getRut() const { return rut; }
 bool Cliente::getEsTerceraEdad() const { return terceraEdad; }
 bool Cliente::getEsEmbarazada() const { return embarazada; }
 bool Cliente::getEsDiscapacitado() const { return discapacitado; }

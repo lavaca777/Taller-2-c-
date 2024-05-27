@@ -105,7 +105,6 @@ void Inventario::cargarProductosDesdeArchivo(const string& nombreArchivo) {
         double precioNum = stod(precio);
         int cantidadNum = stoi(cantidad);
 
-        // Crear un nuevo producto y agregarlo al inventario
         Producto* producto = new Producto(id, categoria, subcategoria, nombre, precioNum, cantidadNum);
         agregarProducto(producto);
     }
@@ -120,7 +119,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         return;
     }
 
-    ofstream archivoSalida("data/temp.txt"); // Archivo temporal para escribir los datos actualizados
+    ofstream archivoSalida("data/temp.txt");
     if (!archivoSalida.is_open()) {
         cerr << "No se pudo abrir el archivo temporal." << endl;
         archivoEntrada.close();
@@ -138,7 +137,6 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
         getline(ss, precio, ',');
         getline(ss, cantidad, ',');
 
-        // Si el ID del producto coincide con el que estamos buscando, actualizamos la cantidad
         if (id == productoModificado->getId()) {
             int nuevaCantidad = productoModificado->getCantidad();
             archivoSalida << id << ',' << categoria << ',' << subcategoria << ',' << nombre << ',' << precio << ',' << nuevaCantidad << endl;
@@ -157,7 +155,7 @@ void Inventario::actualizarArchivo(const string& nombreArchivo, Producto* produc
 }
 
 void Inventario::guardarProductoEnArchivo(const string& nombreArchivo, Producto* producto) {
-    ofstream archivo(nombreArchivo, ios::app); // Abre el archivo en modo append
+    ofstream archivo(nombreArchivo, ios::app);
     if (!archivo.is_open()) {
         cerr << "No se pudo abrir el archivo: " << nombreArchivo << endl;
         return;

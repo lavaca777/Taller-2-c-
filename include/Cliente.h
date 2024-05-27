@@ -5,16 +5,18 @@ using namespace std;
 class Cliente{
     private:
         string nombre;
+        string rut;
         bool terceraEdad = false;
         bool discapacitado = false;
         bool embarazada = false;
         bool normal = false;
     public:
 
-        Cliente(string nombre);
+        Cliente(string nombre, string rut);
         ~Cliente();
 
         string getNombre() const;
+        string getRut() const;
 
         bool getEsTerceraEdad() const;
         void setTerceraEdad(bool terceraEdad);

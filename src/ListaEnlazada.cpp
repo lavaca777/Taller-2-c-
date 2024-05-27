@@ -12,7 +12,7 @@ ListaEnlazada::~ListaEnlazada() {
     Nodo* actual = cabeza;
     while (actual != nullptr) {
         Nodo* siguiente = actual->siguiente;
-        delete actual; // Eliminar el nodo actual
+        delete actual;
         actual = siguiente;
     }
 }
